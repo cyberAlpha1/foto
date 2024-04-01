@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dzintars Foto</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="panel a">
+			<img id="me" src="pictures/es.jpg" alt="">
+				<div>
+					<h1>Dzintars Foto</h1>
+					<h3>Pasākumu un portretu bildes | Instagram: <a style="color: #fff" href="https://www.instagram.com/dzintars.photography/">@dzintars.photography</a> | E-pasts: <a style="color: #fff" href="mailto: dzintars.photography@gmail.com">dzintars.photography@gmail.com</a></h3>
+				</div>			
+		</div>
+		<div class="panel b">
+			<h1>Portreti</h1>
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6253.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_3331.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_5860.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_4722.jpg">
+		</div>
+		<div class="panel a">
+			<h1>Pasākumi</h1>
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_2976.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6463.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6536.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_8395.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6897.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_0172.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_0345.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_1055.jpg">
+		</div>
+		<div class="panel b">
+			<h1>Aktivitātes</h1>
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_7019.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_4838.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_7009.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_1791.jpg">
+		</div>
+		<div class="panel a">
+			<h1>Produkti</h1>
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_0008_1.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6406.jpg">
+		</div>
+		<div class="panel b">
+			<h1>Cenas</h1>
+			<h2>Privāts pasākums</h2>
+			<h3>50 EUR / Stunda</h3>
+			<br>
+			<h2>Korporatīvs pasākums</h2>
+			<h3>60 EUR / Stunda</h3>
+			<br>
+			<h2>Portretu fotosesija</h2>
+			<h3>70 EUR / Stunda</h3>
+			<br>
+			<br>
+			<h3>© Dzintars Straupe 2024</h3>
+		</div>
+		<div onclick="hideIMG()" id="full-bg" class="overlay"><img id="full-img" class="overlay" src="pictures/IMG_3331.jpg"></div>	
+	</body>
+	<script>
+		function showIMG(e)
+		{
+			document.getElementById("full-img").src = e.target.src;
+			document.getElementById("full-bg").style.display="inline";
+		}
+		
+		function hideIMG()
+		{
+			document.getElementById("full-bg").style.display="none";
+		}
+	</script>
+</html>

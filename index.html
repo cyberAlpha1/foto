@@ -13,7 +13,7 @@
 			<img id="me" src="pictures/es.jpg" alt="">
 				<div>
 					<h1>Dzintars Foto</h1>
-					<h3>Pasākumu un portretu bildes | Instagram: <a style="color: #fff" href="https://www.instagram.com/dzintars.photography/">@dzintars.photography</a> | E-pasts: <a style="color: #fff" href="mailto: dzintars.photography@gmail.com">dzintars.photography@gmail.com</a></h3>
+					<h3>Pasākumu, portretu, koncertu un sporta bildes | Video | Instagram: <a style="color: #fff" href="https://www.instagram.com/dzintars.photography/">@dzintars.photography</a> | Telefons: <a style="color: #fff" href="tel: +37127142381">+371 27 142 381</a> | E-pasts: <a style="color: #fff" href="mailto: dzintars.photography@gmail.com">dzintars.photography@gmail.com</a></h3>
 				</div>			
 		</div>
 		<div class="panel b">
@@ -25,37 +25,56 @@
 		</div>
 		<div class="panel a">
 			<h1>Pasākumi</h1>
-			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_2976.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/DS-EKA-GADA-BALVA-170.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6463.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6536.jpg">
-			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_8395.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/DS-ARISTOTELIS-63.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6897.jpg">
-			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_0172.jpg">
-			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_0345.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/DS-BUNGU-KONCERTS-353.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/DS-ARISTOTELIS-69.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_1055.jpg">
 		</div>
 		<div class="panel b">
-			<h1>Aktivitātes</h1>
-			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_7019.jpg">
+			<h1>Sports</h1>
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/DS-SPORTUS-BASKETBOLA-FINALS-30.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_4838.jpg">
-			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_7009.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/193A0790.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_1791.jpg">
 		</div>
 		<div class="panel a">
 			<h1>Produkti</h1>
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_0008_1.jpg">
 			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_6406.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/IMG_9271.jpg">
+			<img onclick="showIMG(event)" class="album-picture" src="pictures/193A1579.jpg">
 		</div>
 		<div class="panel b">
+			<h1>Video</h1>
+		</div>
+			<div class="video-container">
+				<video src="StudyFest-2024-3.mov" autoplay loop muted></video>
+			  </div>
+			  <div class="video-container">
+				<video src="Deja-Master-3.mp4" autoplay loop muted></video>
+			  </div>
+			  <div class="video-container">
+				<video src="Pavasara-svetki-remaster.mp4" autoplay loop muted></video>
+			  </div>
+		<div class="panel a">
 			<h1>Cenas</h1>
-			<h2>Privāts pasākums</h2>
-			<h3>50 EUR / Stunda</h3>
+			<h2>Foto pakalpojums izmaksās aptuveni</h2>
+			<h2 id="price">100$</h2>
+			<h3 id="hours">Stundu skaits 2h</h3>
+			<div class="slidecontainer">
+				<input type="range" min="1" max="16" value="2" width="500px" class="slider" id="sliderHours">
+			</div>	
+			<h3 id="distance">Attālums no Rīgas 0km</h3>
+			<div class="slidecontainer">
+				<input type="range" min="0" max="400" value="0" width="500px" class="slider" id="sliderDistance">
+			  </div>
+			  <br>
+			<h2>Par video pakalpojumu cenām lūdzu sazināties</h2>
 			<br>
-			<h2>Korporatīvs pasākums</h2>
-			<h3>60 EUR / Stunda</h3>
-			<br>
-			<h2>Portretu fotosesija</h2>
-			<h3>70 EUR / Stunda</h3>
 			<br>
 			<br>
 			<h3>© Dzintars Straupe 2024</h3>
@@ -63,6 +82,32 @@
 		<div onclick="hideIMG()" id="full-bg" class="overlay"><img id="full-img" class="overlay" src="pictures/IMG_3331.jpg"></div>	
 	</body>
 	<script>
+		var slider1 = document.getElementById("sliderHours");
+		var slider2 = document.getElementById("sliderDistance");
+		var output1 = document.getElementById("price");
+		var output2 = document.getElementById("hours");
+		var output3 = document.getElementById("distance");
+
+		// Update the current slider value (each time you drag the slider handle)
+		slider1.oninput = function()
+		{
+			updatePrice();
+		} 
+		slider2.oninput = function()
+		{
+			updatePrice();
+		} 
+		function updatePrice()
+		{
+			var price = 65;
+			price += slider1.value * 30;
+			price += Math.round(slider2.value * 0.4);
+			price = Math.ceil(price / 5) * 5;
+			output1.innerHTML = price + "€";
+			output2.innerHTML = "Stundu skaits " + slider1.value + "h";
+			output3.innerHTML = "Attālums no RĪgas " + slider2.value + "km";
+		}
+		updatePrice();
 		function showIMG(e)
 		{
 			document.getElementById("full-img").src = e.target.src;

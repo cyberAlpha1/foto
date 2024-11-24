@@ -33,8 +33,8 @@ h3{
 }
 
 .album-picture{
-	width: 600px;
-	height: 600px;
+	width: 500px;
+	height: 500px;
 	object-fit: cover;
 	overflow: hidden;
 	margin: 10px;
@@ -55,11 +55,11 @@ h3{
 }
 
 .a{
-	background-color: #090909;
+	background-color: #050807;
 }
 
 .b{
-	background-color: #151515;
+	background-color: #0e0e0e;
 }
 
 #me{
@@ -85,4 +85,51 @@ img.overlay{
 	width: 100%;
 	height: 100%;
 	margin: auto;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 40%;
+	height: 15px;
+	border-radius: 5px;  
+	background: #272727;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%; 
+	background: #cecece;
+	cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #cecece;
+	cursor: pointer;
+  }
+
+
+.video-container {
+  width: 100vw; /* Full screen width */
+  height: 55vh; /* Half of the screen height */
+  overflow: hidden;
+  position: relative;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%; /* Center the video vertically */
+  left: 50%; /* Center the video horizontally */
+  transform: translate(-50%, -50%); /* Offset for centering */
+  min-width: 100%; /* Ensure video covers full width */
+  min-height: 100%; /* Ensure video covers full height */
 }
